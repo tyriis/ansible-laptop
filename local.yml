@@ -20,13 +20,55 @@
       validate: 'visudo -cf %s'
 
   # Note: Dependency resolution will still include repository packages.
-  - name: Upgrade the system using yay, only act on AUR packages.
+  - name: Upgrade the system using yay.
     kewlfft.aur.aur:
       upgrade: yes
       use: yay
       aur_only: no
     become: yes
     become_user: aur_builder
+
+- name: Install packages using yay
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      # fonts
+      - adobe-source-code-pro-fonts
+      # icons
+      - adwaita-icon-theme
+      - hicolor-icon-theme
+      # terminal emulator
+      - alacritty
+      # audio
+      - alsa-utils
+      # devops
+      - ansible
+      - flux-bin
+
+      - barrier
+      - btrfs-progs
+      - containerd
+      - cups
+      - curl
+      - discord
+      - direnv
+      - dmenu2
+      - docker
+      - docker-compose
+      - docker-credential-pass-bin
+      - dosfstools
+      - dunst
+      - etcher-bin
+      - ffmpeg
+      - gnome-keyring
+      - helm
+      - hdparm
+      - htop
+      - hplib
+      - iftop
+    become: yes
+    become_user: aur_builder
+
 
   # - name: install packages
   #   package:
