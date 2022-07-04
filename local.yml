@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   connection: local
-  become: true
+  become: yes
 
   tasks:
   - name: Create the `aur_builder` user
@@ -42,7 +42,6 @@
         - aur/go-task-bin
         - aur/i3blocks-contrib
         - aur/kind-bin
-        - aur/kubeseal-bin
         - aur/lens-bin
         - aur/mqtt-explorer-appimage
         - aur/nerd-fonts-inconsolata
@@ -102,6 +101,7 @@
         - community/neovim
         - community/kustomize
         - community/kubectl
+        - community/kubeseal
         - community/k9s
         - community/jq
         - community/iotop
