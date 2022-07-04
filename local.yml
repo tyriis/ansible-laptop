@@ -70,12 +70,14 @@
     become_user: aur_builder
 
 
-  # - name: install packages
-  #   package:
-  #     name:
-  #       - htop
-  #       - tmux
-  #       - vim-nox
+  - name: install packages
+    ansible.builtin.package:
+      name:
+        - community/zsh-syntax-highlighting
+        - community/zsh-autosuggestions
+        - community/yq
+      state: latest
+    become: yes
 
   # - name: copy wallpaper file
   #   copy:
