@@ -64,6 +64,14 @@
     become_user: aur_builder
 
 
+  - name: create symlink for go-task
+    ansible.builtin.file:
+      src: /usr/bin/go-task
+      dest: /usr/bin/task
+      state: link
+    become: yes
+
+
   - name: install packages
     ansible.builtin.package:
       name:
