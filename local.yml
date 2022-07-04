@@ -32,32 +32,32 @@
     kewlfft.aur.aur:
       use: yay
       name:
-        - dmenu2
-        - docker-credential-pass-bin
-        - etcher-bin
-        - flux-bin
-        - google-chrome
-        - google-cloud-sdk
-        - gotask-taskfile
-        - i3blocks-contrib
-        - kind-bin
-        - kubeseal-bin
-        - lens-bin
-        - mqtt-explorer-appimage
-        - nerd-fonts-inconsolata
-        - nerd-fonts-inconsolata-go
-        - nodejs-markdownlint-cli
-        - nvm
-        - otf-inconsolata-dz-powerline
-        - postman-bin
-        - pyenv-virtualenv
-        - spaceship-prompt
-        - spotify
-        - terraform-docs-bin
-        - tflint-bin
-        - tfsec
-        - visual-studio-code-bin
-        - yay
+        - aur/dmenu2
+        - aur/docker-credential-pass-bin
+        - aur/etcher-bin
+        - aur/flux-bin
+        - aur/google-chrome
+        - aur/google-cloud-sdk
+        - aur/gotask-taskfile
+        - aur/i3blocks-contrib
+        - aur/kind-bin
+        - aur/kubeseal-bin
+        - aur/lens-bin
+        - aur/mqtt-explorer-appimage
+        - aur/nerd-fonts-inconsolata
+        - aur/nerd-fonts-inconsolata-go
+        - aur/nodejs-markdownlint-cli
+        - aur/nvm
+        - aur/otf-inconsolata-dz-powerline
+        - aur/postman-bin
+        - aur/pyenv-virtualenv
+        - aur/spaceship-prompt
+        - aur/spotify
+        - aur/terraform-docs-bin
+        - aur/tflint-bin
+        - aur/tfsec
+        - aur/visual-studio-code-bin
+        - aur/yay
       state: latest
     become: yes
     become_user: aur_builder
