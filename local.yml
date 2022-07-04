@@ -32,40 +32,33 @@
     kewlfft.aur.aur:
       use: yay
       name:
-        # fonts
-        - adobe-source-code-pro-fonts
-        # icons
-        - adwaita-icon-theme
-        - hicolor-icon-theme
-        # terminal emulator
-        - alacritty
-        # audio
-        - alsa-utils
-        # devops
-        - ansible
-        - flux-bin
-
-        - barrier
-        - btrfs-progs
-        - containerd
-        - cups
-        - curl
-        - discord
-        - direnv
         - dmenu2
-        - docker
-        - docker-compose
         - docker-credential-pass-bin
-        - dosfstools
-        - dunst
         - etcher-bin
-        - ffmpeg
-        - gnome-keyring
-        - helm
-        - hdparm
-        - htop
-        - hplip
-        - iftop
+        - flux-bin
+        - google-chrome
+        - google-cloud-sdk
+        - gotask-taskfile
+        - i3blocks-contrib
+        - kind-bin
+        - kubeseal-bin
+        - lens-bin
+        - mqtt-explorer-appimage
+        - nerd-fonts-inconsolata
+        - nerd-fonts-inconsolata-go
+        - nodejs-markdownlint-cli
+        - nvm
+        - otf-inconsolata-dz-powerline
+        - postman-bin
+        - pyenv-virtualenv
+        - spaceship-prompt
+        - spotify
+        - terraform-docs-bin
+        - tflint-bin
+        - tfsec
+        - visual-studio-code-bin
+        - yay
+      state: latest
     become: yes
     become_user: aur_builder
 
@@ -76,6 +69,51 @@
         - community/zsh-syntax-highlighting
         - community/zsh-autosuggestions
         - community/yq
+        - community/yarn
+        - community/yamllint
+        - community/x11-ssh-askpass
+        - community/vault
+        - community/ttf-liberation
+        - community/ttf-font-awesome
+        - community/ttf-fira-code
+        - community/ttf-dejavu
+        - community/tmux
+        - community/tig
+        - community/terraform
+        - community/sops
+        - community/semver
+        - community/scrot
+        - community/redis
+        - community/ranger
+        - community/pyenv
+        - community/prettier
+        - community/pacman-contrib
+        - community/openbsd-netcat
+        - community/nodejs
+        - community/neovim
+        - community/kustomize
+        - community/kubectl
+        - community/k9s
+        - community/jq
+        - community/iotop
+        - community/iftop
+        - community/i3status
+        - community/i3lock
+        - community/i3blocks
+        - community/i3-gaps
+        - community/helm
+        - community/go
+        - community/dunst
+        - community/docker-compose
+        - community/docker
+        - community/discord
+        - community/direnv
+        - community/colordiff
+        - community/barrier
+        - community/ansible
+        - community/alacritty
+        - community/acpi
+
       state: latest
     become: yes
 
