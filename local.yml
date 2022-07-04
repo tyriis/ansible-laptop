@@ -10,6 +10,7 @@
       name: aur_builder
       create_home: yes
       group: wheel
+      state: present
 
   - name: Allow the `aur_builder` user to run `sudo pacman` without a password
     become: yes
@@ -38,7 +39,7 @@
         - aur/flux-bin
         - aur/google-chrome
         - aur/google-cloud-sdk
-        - aur/gotask-taskfile
+        - aur/go-task-bin
         - aur/i3blocks-contrib
         - aur/kind-bin
         - aur/kubeseal-bin
