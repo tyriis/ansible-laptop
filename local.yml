@@ -4,6 +4,61 @@
   become: yes
 
   tasks:
+
+  - name: Install packages using pacman
+    ansible.builtin.package:
+      state: latest
+      become: yes
+      name:
+      - community/zsh-syntax-highlighting
+      - community/zsh-autosuggestions
+      - community/yq
+      - community/yarn
+      - community/yamllint
+      - community/x11-ssh-askpass
+      - community/vault
+      - community/ttf-liberation
+      - community/ttf-font-awesome
+      - community/ttf-fira-code
+      - community/ttf-dejavu
+      - community/tmux
+      - community/tig
+      - community/terraform
+      - community/sops
+      - community/semver
+      - community/scrot
+      - community/redis
+      - community/ranger
+      - community/pyenv
+      - community/prettier
+      - community/pacman-contrib
+      - community/openbsd-netcat
+      - community/nodejs
+      - community/neovim
+      - community/kustomize
+      - community/kubectl
+      - community/kubeseal
+      - community/k9s
+      - community/jq
+      - community/iotop
+      - community/iftop
+      - community/i3status
+      - community/i3lock
+      - community/i3blocks
+      - community/i3-gaps
+      - community/helm
+      - community/go
+      - community/dunst
+      - community/docker-compose
+      - community/docker
+      - community/discord
+      - community/direnv
+      - community/colordiff
+      - community/barrier
+      - community/ansible
+      - community/alacritty
+      - community/acpi
+
   - name: Create the `aur_builder` user
     become: yes
     ansible.builtin.user:
@@ -20,111 +75,59 @@
       create: yes
       validate: 'visudo -cf %s'
 
-  # Note: Dependency resolution will still include repository packages.
-  - name: Upgrade the system using yay.
-    kewlfft.aur.aur:
-      upgrade: yes
-      use: yay
-      aur_only: no
-    become: yes
-    become_user: aur_builder
-
   - name: Install packages using yay
-    kewlfft.aur.aur:
-      use: yay
-      name:
-        - aur/dmenu2
-        - aur/docker-credential-pass-bin
-        - aur/etcher-bin
-        - aur/flux-bin
-        - aur/google-chrome
-        - aur/google-cloud-sdk
-        - aur/go-task-bin
-        - aur/i3blocks-contrib
-        - aur/kind-bin
-        - aur/lens-bin
-        - aur/mqtt-explorer-appimage
-        - aur/nerd-fonts-inconsolata
-        - aur/nerd-fonts-inconsolata-go
-        - aur/nodejs-markdownlint-cli
-        - aur/nvm
-        - aur/otf-inconsolata-dz-powerline
-        - aur/postman-bin
-        - aur/pyenv-virtualenv
-        - aur/spaceship-prompt
-        - aur/spotify
-        - aur/terraform-docs-bin
-        - aur/tflint-bin
-        - aur/tfsec
-        - aur/visual-studio-code-bin
-        - aur/yay
-      state: latest
     become: yes
     become_user: aur_builder
+    kewlfft.aur.aur:
+      use: yay
+      state: latest
+      name:
+      - aur/dmenu2
+      - aur/docker-credential-pass-bin
+      - aur/etcher-bin
+      - aur/flux-bin
+      - aur/google-chrome
+      - aur/google-cloud-sdk
+      - aur/go-task-bin
+      - aur/i3blocks-contrib
+      - aur/kind-bin
+      - aur/lens-bin
+      - aur/mqtt-explorer-appimage
+      - aur/nerd-fonts-inconsolata
+      - aur/nerd-fonts-inconsolata-go
+      - aur/nodejs-markdownlint-cli
+      - aur/nvm
+      - aur/otf-inconsolata-dz-powerline
+      - aur/postman-bin
+      - aur/pyenv-virtualenv
+      - aur/spaceship-prompt
+      - aur/spotify
+      - aur/terraform-docs-bin
+      - aur/tflint-bin
+      - aur/tfsec
+      - aur/visual-studio-code-bin
+      - aur/yay
 
-
-  - name: create symlink for go-task
+  - name: Create symlink go-task -> task
+    become: yes
     ansible.builtin.file:
       src: /usr/bin/go-task
       dest: /usr/bin/task
       state: link
+
+  - name: Upgrade the system using yay
     become: yes
+    become_user: aur_builder
+    kewlfft.aur.aur:
+      upgrade: yes
+      use: yay
+      aur_only: no
 
 
-  - name: install packages
-    ansible.builtin.package:
-      name:
-        - community/zsh-syntax-highlighting
-        - community/zsh-autosuggestions
-        - community/yq
-        - community/yarn
-        - community/yamllint
-        - community/x11-ssh-askpass
-        - community/vault
-        - community/ttf-liberation
-        - community/ttf-font-awesome
-        - community/ttf-fira-code
-        - community/ttf-dejavu
-        - community/tmux
-        - community/tig
-        - community/terraform
-        - community/sops
-        - community/semver
-        - community/scrot
-        - community/redis
-        - community/ranger
-        - community/pyenv
-        - community/prettier
-        - community/pacman-contrib
-        - community/openbsd-netcat
-        - community/nodejs
-        - community/neovim
-        - community/kustomize
-        - community/kubectl
-        - community/kubeseal
-        - community/k9s
-        - community/jq
-        - community/iotop
-        - community/iftop
-        - community/i3status
-        - community/i3lock
-        - community/i3blocks
-        - community/i3-gaps
-        - community/helm
-        - community/go
-        - community/dunst
-        - community/docker-compose
-        - community/docker
-        - community/discord
-        - community/direnv
-        - community/colordiff
-        - community/barrier
-        - community/ansible
-        - community/alacritty
-        - community/acpi
 
-      state: latest
-    become: yes
+
+
+
 
   # - name: copy wallpaper file
   #   copy:
