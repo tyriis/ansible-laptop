@@ -13,7 +13,7 @@
   - name: Install packages using pacman
     become: yes
     ansible.builtin.package:
-      state: latest
+      state: present
       name:
       - community/zsh-syntax-highlighting
       - community/zsh-autosuggestions
@@ -148,7 +148,7 @@
     become_user: aur_builder
     kewlfft.aur.aur:
       use: yay
-      state: latest
+      state: present
       name:
       - aur/dmenu2
       - aur/docker-credential-pass-bin
@@ -183,22 +183,19 @@
       dest: /usr/bin/task
       state: link
 
-  - name: Upgrade the system using yay
-    become: yes
-    become_user: aur_builder
-    kewlfft.aur.aur:
-      upgrade: yes
-      use: yay
-      aur_only: no
-
   - name: Run the equivalent of "pacman -Syu" as a separate step
     become: yes
     pacman:
       update_cache: yes
       upgrade: yes
 
-
-
+  # - name: Upgrade the system using yay
+  #   become: yes
+  #   become_user: aur_builder
+  #   kewlfft.aur.aur:
+  #     upgrade: yes
+  #     use: yay
+  #     aur_only: yes
 
 
 
