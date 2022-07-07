@@ -11,9 +11,9 @@
       update_cache: yes
 
   - name: Install packages using pacman
+    become: yes
     ansible.builtin.package:
       state: latest
-      become: yes
       name:
       - community/zsh-syntax-highlighting
       - community/zsh-autosuggestions
