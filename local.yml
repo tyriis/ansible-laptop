@@ -58,6 +58,69 @@
       - community/ansible
       - community/alacritty
       - community/acpi
+      - extra/zsh
+      - extra/zip
+      - extra/xorg-xrandr
+      - extra/xorg-xinit
+      - extra/xorg-xev
+      - extra/xorg-server
+      - extra/wget
+      - extra/vim
+      - extra/v4l-utils
+      - extra/unzip
+      - extra/tree
+      - extra/thunar
+      - extra/smartmontools
+      - extra/rsync
+      - extra/pulseaudio
+      - extra/prometheus-node-exporter
+      - extra/prometheus
+      - extra/pango
+      - extra/nm-connection-editor
+      - extra/networkmanager-openvpn
+      - extra/networkmanager-openconnect
+      - extra/networkmanager
+      - extra/network-manager-applet
+      - extra/lm_sensors
+      - extra/jre-openjdk
+      - extra/jdk-openjdk
+      - extra/htop
+      - extra/hplip
+      - extra/graphviz
+      - extra/gnome-keyring
+      - extra/git
+      - extra/ffmpeg
+      - extra/cups
+      - extra/alsa-utils
+      - core/wpa_supplicant
+      - core/util-linux
+      - core/usbutils
+      - core/sqlite
+      - core/python
+      - core/pciutils
+      - core/openssl
+      - core/openssh
+      - core/nfs-utils
+      - core/net-tools
+      - core/mkinitcpio-busybox
+      - core/mkinitcpio
+      - core/linux-headers
+      - core/linux-firmware
+      - core/linux
+      - core/iptables
+      - core/hdparm
+      - core/efivar
+      - core/efibootmgr
+      - core/e2fsprogs
+      - core/dosfstools
+      - core/device-mapper
+      - core/curl
+      - core/cryptsetup
+      - core/coreutils
+      - core/btrfs-progs
+      - core/base
+      - core/base-devel
+
 
   - name: Create the `aur_builder` user
     become: yes
