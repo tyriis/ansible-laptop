@@ -5,6 +5,11 @@
 
   tasks:
 
+  - name: Updating cache
+    become: true
+    pacman:
+      update_cache: true
+
   - name: Install packages using pacman
     ansible.builtin.package:
       state: latest
@@ -185,6 +190,11 @@
       upgrade: yes
       use: yay
       aur_only: no
+
+  - name: Run the equivalent of "pacman -Syu" as a separate step
+    pacman:
+      update_cache: yes
+      upgrade: yes
 
 
 
