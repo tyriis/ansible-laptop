@@ -1,34 +1,31 @@
 ---
-# Based on ansible-lint config
+# see https://yamllint.readthedocs.io/en/stable/index.html for more options
+
 extends: default
-
 rules:
-  braces:
-    max-spaces-inside: 1
-    level: error
-  brackets:
-    max-spaces-inside: 1
-    level: error
-  colons:
-    max-spaces-after: -1
-    level: error
-  commas:
-    max-spaces-after: -1
-    level: error
-  comments: disable
-  comments-indentation: disable
-  empty-lines:
-    max: 3
-    level: error
-  hyphens:
-    level: error
-  indentation: disable
-  key-duplicates: enable
-  new-line-at-end-of-file: disable
-  new-lines:
-    type: unix
-  trailing-spaces: disable
+  truthy:
+    allowed-values: ["true", "false"]
 
-#  document-start: disable
-#  line-length: disable
-#  truthy: disable
+  line-length:
+    max: 120
+    level: warning
+
+  braces:
+    min-spaces-inside: 0
+    max-spaces-inside: 1
+
+  brackets:
+    min-spaces-inside: 0
+    max-spaces-inside: 0
+
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+    check-multi-line-strings: false
+
+  document-start:
+    present: true
+    level: warning
+
+  comments:
+    min-spaces-from-content: 1

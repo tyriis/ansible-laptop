@@ -211,9 +211,6 @@
       use: yay
       aur_only: true
 
-
-
-
   # - name: copy wallpaper file
   #   copy:
   #     src: files/wallpaper.png
