@@ -152,7 +152,7 @@
   - name: Installing yay
     become: true
     become_user: "{{ aur_user }}"
-    aur:
+    kewlfft.aur.aur:
       name: yay
       use: makepkg
       skip_installed: true
