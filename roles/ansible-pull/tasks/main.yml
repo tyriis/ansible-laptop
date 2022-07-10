@@ -1,0 +1,25 @@
+# Configure ansible-pull with systemd timer
+
+- name: Copy | /usr/lib/systemd/system/ansible-pull.target
+  become: true
+  copy:
+    src: usr/lib/systemd/system/ansible-pull.target
+    dest: /usr/lib/systemd/system/ansible-pull.target
+    owner: root
+    group: root
+
+- name: Copy | /usr/lib/systemd/system/ansible-pull.timer
+  become: true
+  copy:
+    src: usr/lib/systemd/system/ansible-pull.timer
+    dest: /usr/lib/systemd/system/ansible-pull.timer
+    owner: root
+    group: root
+
+- name: Copy | /usr/lib/systemd/system/ansible-pull.service
+  become: true
+  copy:
+    src: usr/lib/systemd/system/ansible-pull.service
+    dest: /usr/lib/systemd/system/ansible-pull.service
+    owner: root
+    group: root

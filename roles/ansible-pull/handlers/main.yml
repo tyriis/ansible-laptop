@@ -1,0 +1,31 @@
+- name: Systemd | daemon reload
+  become: true
+  systemd:
+    daemon_reload: true
+
+- name: Systemd | enable ansible-pull.service
+  become: true
+  systemd:
+    name: ansible-pull.service
+    enabled: true
+    masked: false
+
+- name: Systemd | enable ansible-pull.target
+  become: true
+  systemd:
+    name: ansible-pull.target
+    enabled: true
+    masked: false
+
+- name: Systemd | enable ansible-pull.timer
+  become: true
+  systemd:
+    name: ansible-pull.timer
+    enabled: true
+    masked: false
+
+- name: Systemd | start ansible-pull.timer
+  become: true
+  systemd:
+    name: ansible-pull.timer
+    state: started

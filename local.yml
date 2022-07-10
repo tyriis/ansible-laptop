@@ -2,6 +2,8 @@
 - hosts: localhost
   connection: local
   become: true
+  roles:
+  - ansible-pull
 
   tasks:
 
@@ -211,56 +213,6 @@
       upgrade: true
       use: yay
       aur_only: true
-
-  # Configure ansible-pull with systemd timer
-
-  - name: Copy | /usr/lib/systemd/system/ansible-pull.target
-    copy:
-      src: usr/lib/systemd/system/ansible-pull.target
-      dest: /usr/lib/systemd/system/ansible-pull.target
-      owner: root
-      group: root
-
-  - name: Copy | /usr/lib/systemd/system/ansible-pull.timer
-    copy:
-      src: usr/lib/systemd/system/ansible-pull.timer
-      dest: /usr/lib/systemd/system/ansible-pull.timer
-      owner: root
-      group: root
-
-  - name: Copy | /usr/lib/systemd/system/ansible-pull.service
-    copy:
-      src: usr/lib/systemd/system/ansible-pull.service
-      dest: /usr/lib/systemd/system/ansible-pull.service
-      owner: root
-      group: root
-
-  - name: Systemd | daemon reload
-    systemd:
-      daemon_reload: true
-
-  - name: Systemd | enable ansible-pull.service
-    systemd:
-      name: ansible-pull.service
-      enabled: true
-      masked: false
-
-  - name: Systemd | enable ansible-pull.target
-    systemd:
-      name: ansible-pull.target
-      enabled: true
-      masked: false
-
-  - name: Systemd | enable ansible-pull.timer
-    systemd:
-      name: ansible-pull.timer
-      enabled: true
-      masked: false
-
-  - name: Systemd | start ansible-pull.timer
-    systemd:
-      name: ansible-pull.timer
-      state: started
 
   # - name: copy wallpaper file
   #   copy:
