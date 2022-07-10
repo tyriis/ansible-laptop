@@ -1,0 +1,5 @@
+[Unit]
+Description=GitOps with ansible-pull
+
+[Install]
+WantedBy=default.target

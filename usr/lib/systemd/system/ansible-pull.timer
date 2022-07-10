@@ -1,0 +1,10 @@
+[Unit]
+Description=GitOps with ansible-pull
+
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=10min
+Unit=ansible-pull.target
+
+[Install]
+WantedBy=multi-user.target
