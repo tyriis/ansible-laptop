@@ -235,7 +235,6 @@
       owner: root
       group: root
 
-
   - name: Systemd | daemon reload
     systemd:
       daemon_reload: true
