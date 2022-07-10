@@ -10,126 +10,127 @@
     pacman:
       update_cache: true
 
-  - name: Pacman | install packages
-    become: true
-    pacman:
-      name: base-devel
-
   # - name: Pacman | install packages
   #   become: true
   #   pacman:
-  #     state: present
-  #     name:
-  #     - community/zsh-syntax-highlighting
-  #     - community/zsh-autosuggestions
-  #     - community/yq
-  #     - community/yarn
-  #     - community/yamllint
-  #     - community/x11-ssh-askpass
-  #     - community/vault
-  #     - community/ttf-liberation
-  #     - community/ttf-font-awesome
-  #     - community/ttf-fira-code
-  #     - community/ttf-dejavu
-  #     - community/tmux
-  #     - community/tig
-  #     - community/terraform
-  #     - community/sops
-  #     - community/semver
-  #     - community/scrot
-  #     - community/redis
-  #     - community/ranger
-  #     - community/pyenv
-  #     - community/prettier
-  #     - community/pacman-contrib
-  #     - community/openbsd-netcat
-  #     - community/nodejs
-  #     - community/neovim
-  #     - community/kustomize
-  #     - community/kubectl
-  #     - community/kubeseal
-  #     - community/k9s
-  #     - community/jq
-  #     - community/iotop
-  #     - community/iftop
-  #     - community/i3status
-  #     - community/i3lock
-  #     - community/i3blocks
-  #     - community/i3-gaps
-  #     - community/helm
-  #     - community/go
-  #     - community/dunst
-  #     - community/docker-compose
-  #     - community/docker
-  #     - community/discord
-  #     - community/direnv
-  #     - community/colordiff
-  #     - community/barrier
-  #     - community/ansible
-  #     - community/alacritty
-  #     - community/acpi
-  #     - extra/zsh
-  #     - extra/zip
-  #     - extra/xorg-xrandr
-  #     - extra/xorg-xinit
-  #     - extra/xorg-xev
-  #     - extra/xorg-server
-  #     - extra/wget
-  #     - extra/vim
-  #     - extra/v4l-utils
-  #     - extra/unzip
-  #     - extra/tree
-  #     - extra/thunar
-  #     - extra/smartmontools
-  #     - extra/rsync
-  #     - extra/pulseaudio
-  #     - extra/prometheus-node-exporter
-  #     - extra/prometheus
-  #     - extra/pango
-  #     - extra/nm-connection-editor
-  #     - extra/networkmanager-openvpn
-  #     - extra/networkmanager-openconnect
-  #     - extra/networkmanager
-  #     - extra/network-manager-applet
-  #     - extra/lm_sensors
-  #     - extra/jre-openjdk
-  #     - extra/jdk-openjdk
-  #     - extra/htop
-  #     - extra/hplip
-  #     - extra/graphviz
-  #     - extra/gnome-keyring
-  #     - extra/git
-  #     - extra/ffmpeg
-  #     - extra/cups
-  #     - extra/alsa-utils
-  #     - core/wpa_supplicant
-  #     - core/util-linux
-  #     - core/usbutils
-  #     - core/sqlite
-  #     - core/python
-  #     - core/pciutils
-  #     - core/openssl
-  #     - core/openssh
-  #     - core/nfs-utils
-  #     - core/net-tools
-  #     - core/mkinitcpio-busybox
-  #     - core/mkinitcpio
-  #     - core/linux-headers
-  #     - core/linux-firmware
-  #     - core/linux
-  #     - core/iptables
-  #     - core/hdparm
-  #     - core/efivar
-  #     - core/efibootmgr
-  #     - core/e2fsprogs
-  #     - core/dosfstools
-  #     - core/device-mapper
-  #     - core/curl
-  #     - core/cryptsetup
-  #     - core/coreutils
-  #     - core/btrfs-progs
-  #     - core/base
-  #     - core/base-devel
+  #     name: base-devel
+
+  - name: Pacman | install packages
+    become: true
+    pacman:
+      state: present
+      name:
+      - community/zsh-syntax-highlighting
+      - community/zsh-autosuggestions
+      - community/yq
+      - community/yarn
+      - community/yamllint
+      - community/x11-ssh-askpass
+      - community/vault
+      - community/ttf-liberation
+      - community/ttf-font-awesome
+      - community/ttf-fira-code
+      - community/ttf-dejavu
+      - community/tmux
+      - community/tig
+      - community/terraform
+      - community/sops
+      - community/semver
+      - community/scrot
+      - community/redis
+      - community/ranger
+      - community/pyenv
+      - community/prettier
+      - community/pacman-contrib
+      - community/openbsd-netcat
+      - community/nodejs
+      - community/neovim
+      - community/kustomize
+      - community/kubectl
+      - community/kubeseal
+      - community/k9s
+      - community/jq
+      - community/iotop
+      - community/iftop
+      - community/i3status
+      - community/i3lock
+      - community/i3blocks
+      - community/i3-gaps
+      - community/helm
+      - community/go
+      - community/dunst
+      - community/docker-compose
+      - community/docker
+      - community/discord
+      - community/direnv
+      - community/colordiff
+      - community/chezmoi
+      - community/barrier
+      - community/ansible
+      - community/alacritty
+      - community/acpi
+      - extra/zsh
+      - extra/zip
+      - extra/xorg-xrandr
+      - extra/xorg-xinit
+      - extra/xorg-xev
+      - extra/xorg-server
+      - extra/wget
+      - extra/vim
+      - extra/v4l-utils
+      - extra/unzip
+      - extra/tree
+      - extra/thunar
+      - extra/smartmontools
+      - extra/rsync
+      - extra/pulseaudio
+      - extra/prometheus-node-exporter
+      - extra/prometheus
+      - extra/pango
+      - extra/nm-connection-editor
+      - extra/networkmanager-openvpn
+      - extra/networkmanager-openconnect
+      - extra/networkmanager
+      - extra/network-manager-applet
+      - extra/lm_sensors
+      - extra/jre-openjdk
+      - extra/jdk-openjdk
+      - extra/htop
+      - extra/hplip
+      - extra/graphviz
+      - extra/gnome-keyring
+      - extra/git
+      - extra/ffmpeg
+      - extra/cups
+      - extra/alsa-utils
+      - core/wpa_supplicant
+      - core/util-linux
+      - core/usbutils
+      - core/sqlite
+      - core/python
+      - core/pciutils
+      - core/openssl
+      - core/openssh
+      - core/nfs-utils
+      - core/net-tools
+      - core/mkinitcpio-busybox
+      - core/mkinitcpio
+      - core/linux-headers
+      - core/linux-firmware
+      - core/linux
+      - core/iptables
+      - core/hdparm
+      - core/efivar
+      - core/efibootmgr
+      - core/e2fsprogs
+      - core/dosfstools
+      - core/device-mapper
+      - core/curl
+      - core/cryptsetup
+      - core/coreutils
+      - core/btrfs-progs
+      - core/base
+      - core/base-devel
 
   - name: Set | aur_user
     set_fact:
@@ -209,7 +210,7 @@
     kewlfft.aur.aur:
       upgrade: true
       use: yay
-      aur_only: true
+      aur_only: trueq
 
   # - name: copy wallpaper file
   #   copy:
