@@ -210,7 +210,7 @@
     kewlfft.aur.aur:
       upgrade: true
       use: yay
-      aur_only: trueq
+      aur_only: true
 
   # - name: copy wallpaper file
   #   copy:
