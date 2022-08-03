@@ -5,7 +5,7 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/ansible-pull -o -U https://github.com/tyriis/ansible-laptop.git
+ExecStart=/usr/bin/ansible-pull -U https://github.com/tyriis/ansible-laptop.git
 
 [Install]
 WantedBy=ansible-pull.target
