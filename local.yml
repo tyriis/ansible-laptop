@@ -95,8 +95,8 @@
       - extra/networkmanager
       - extra/network-manager-applet
       - extra/lm_sensors
-      - extra/jre-openjdk
-      - extra/jdk-openjdk
+      # - extra/jre-openjdk
+      # - extra/jdk-openjdk
       - extra/htop
       - extra/hplip
       - extra/graphviz
