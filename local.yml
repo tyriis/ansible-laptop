@@ -66,6 +66,7 @@
       # - community/i3blocks
       # - community/i3-gaps
       - community/helm
+      - community/age
       # - community/go
       # - community/dunst
       # - community/docker-compose
