@@ -17,122 +17,131 @@
   #   pacman:
   #     name: base-devel
 
+  # - name: Pacman | uninstall no longer needed packages
+  #   become: true
+  #   pacman:
+  #     state: absent
+  #     name:
+  #       - gnu-netcat
+
+
   - name: Pacman | install packages
     become: true
     pacman:
       state: present
       name:
-      - community/zsh-syntax-highlighting
-      - community/zsh-autosuggestions
+      # - community/zsh-syntax-highlighting
+      # - community/zsh-autosuggestions
       - community/yq
-      - community/yarn
+      # - community/yarn
       - community/yamllint
-      - community/x11-ssh-askpass
-      - community/vault
-      - community/ttf-liberation
-      - community/ttf-font-awesome
-      - community/ttf-fira-code
-      - community/ttf-dejavu
-      - community/tmux
-      - community/tig
+      # - community/x11-ssh-askpass
+      # - community/vault
+      # - community/ttf-liberation
+      # - community/ttf-font-awesome
+      # - community/ttf-fira-code
+      # - community/ttf-dejavu
+      # - community/tmux
+      # - community/tig
       - community/terraform
       - community/sops
-      - community/semver
+      # - community/semver
       - community/scrot
-      - community/redis
-      - community/ranger
+      # - community/redis
+      # - community/ranger
       - community/pyenv
       - community/prettier
-      - community/pacman-contrib
-      - community/openbsd-netcat
+      # - community/pacman-contrib
+      # - community/openbsd-netcat
       - community/nodejs
-      - community/neovim
+      - extra/vim
       - community/kustomize
       - community/kubectl
-      - community/kubeseal
+      # - community/kubeseal
       - community/k9s
       - community/jq
-      - community/iotop
-      - community/iftop
-      - community/i3status
-      - community/i3lock
-      - community/i3blocks
-      - community/i3-gaps
+      # - community/iotop
+      # - community/iftop
+      # - community/i3status
+      # - community/i3lock
+      # - community/i3blocks
+      # - community/i3-gaps
       - community/helm
-      - community/go
-      - community/dunst
-      - community/docker-compose
-      - community/docker
+      # - community/go
+      # - community/dunst
+      # - community/docker-compose
+      # - community/docker
       - community/discord
       - community/direnv
       - community/colordiff
       - community/chezmoi
       - community/barrier
       - community/ansible
-      - community/alacritty
-      - community/acpi
-      - extra/zsh
+      - community/code
+      # - community/alacritty
+      # - community/acpi
+      # - extra/zsh
       - extra/zip
-      - extra/xorg-xrandr
-      - extra/xorg-xinit
-      - extra/xorg-xev
-      - extra/xorg-server
+      # - extra/xorg-xrandr
+      # - extra/xorg-xinit
+      # - extra/xorg-xev
+      # - extra/xorg-server
       - extra/wget
-      - extra/vim
-      - extra/v4l-utils
+      # - extra/vim
+      # - extra/v4l-utils
       - extra/unzip
       - extra/tree
-      - extra/thunar
+      # - extra/thunar
       - extra/smartmontools
       - extra/rsync
-      - extra/pulseaudio
-      - extra/prometheus-node-exporter
-      - extra/prometheus
-      - extra/pango
-      - extra/nm-connection-editor
-      - extra/networkmanager-openvpn
-      - extra/networkmanager-openconnect
-      - extra/networkmanager
-      - extra/network-manager-applet
-      - extra/lm_sensors
-      # - extra/jre-openjdk
-      # - extra/jdk-openjdk
+      # - extra/pulseaudio
+      # - extra/prometheus-node-exporter
+      # - extra/prometheus
+      # - extra/pango
+      # - extra/nm-connection-editor
+      # - extra/networkmanager-openvpn
+      # - extra/networkmanager-openconnect
+      # - extra/networkmanager
+      # - extra/network-manager-applet
+      # - extra/lm_sensors
+      # # - extra/jre-openjdk
+      # # - extra/jdk-openjdk
       - extra/htop
-      - extra/hplip
-      - extra/graphviz
-      - extra/gnome-keyring
+      # - extra/hplip
+      # - extra/graphviz
+      # - extra/gnome-keyring
       - extra/git
       - extra/ffmpeg
       - extra/cups
-      - extra/alsa-utils
-      - core/wpa_supplicant
-      - core/util-linux
+      # - extra/alsa-utils
+      # - core/wpa_supplicant
+      # - core/util-linux
       - core/usbutils
-      - core/sqlite
-      - core/python
+      # - core/sqlite
+      # - core/python
       - core/pciutils
-      - core/openssl
-      - core/openssh
+      # - core/openssl
+      # - core/openssh
       - core/nfs-utils
       - core/net-tools
-      - core/mkinitcpio-busybox
-      - core/mkinitcpio
-      - core/linux-headers
-      - core/linux-firmware
-      - core/linux
-      - core/iptables
-      - core/hdparm
-      - core/efivar
-      - core/efibootmgr
-      - core/e2fsprogs
-      - core/dosfstools
-      - core/device-mapper
+      # - core/mkinitcpio-busybox
+      # - core/mkinitcpio
+      # - core/linux-headers
+      # - core/linux-firmware
+      # - core/linux
+      # - core/iptables
+      # - core/hdparm
+      # - core/efivar
+      # - core/efibootmgr
+      # - core/e2fsprogs
+      # - core/dosfstools
+      # - core/device-mapper
       - core/curl
-      - core/cryptsetup
-      - core/coreutils
-      - core/btrfs-progs
-      - core/base
-      - core/base-devel
+      # - core/cryptsetup
+      # - core/coreutils
+      # - core/btrfs-progs
+      # - core/base
+      # - core/base-devel
 
   - name: Set | aur_user
     set_fact:
@@ -141,7 +150,7 @@
   - name: User | create user aur_builder
     become: true
     ansible.builtin.user:
-      name: "{{ aur_user }}"
+    name: "{{ aur_user }}"
       group: wheel
 
   - name: Config | aur_builder sudo pacman
@@ -152,46 +161,46 @@
       create: true
       validate: 'visudo -cf %s'
 
-  - name: Aur | install yay
-    become: true
-    become_user: "{{ aur_user }}"
-    kewlfft.aur.aur:
-      name: yay
-      use: makepkg
-      state: present
-
-  # - name: Aur | install packages
+  # - name: Aur | install yay
   #   become: true
   #   become_user: "{{ aur_user }}"
   #   kewlfft.aur.aur:
-  #     use: yay
+  #     name: yay
+  #     use: makepkg
   #     state: present
-  #     name:
-  #     - aur/dmenu2
-  #     - aur/docker-credential-pass-bin
-  #     - aur/etcher-bin
-  #     - aur/flux-bin
-  #     - aur/google-chrome
-  #     - aur/google-cloud-sdk
-  #     - aur/go-task-bin
-  #     - aur/i3blocks-contrib
-  #     - aur/kind-bin
-  #     - aur/lens-bin
-  #     - aur/mqtt-explorer-appimage
-  #     - aur/nerd-fonts-inconsolata
-  #     - aur/nerd-fonts-inconsolata-go
-  #     - aur/nodejs-markdownlint-cli
-  #     - aur/nvm
-  #     - aur/otf-inconsolata-dz-powerline
-  #     - aur/postman-bin
-  #     - aur/pyenv-virtualenv
-  #     - aur/spaceship-prompt
-  #     - aur/spotify
-  #     - aur/terraform-docs-bin
-  #     - aur/tflint-bin
-  #     - aur/tfsec
-  #     - aur/visual-studio-code-bin
-  #     - aur/yay
+
+  - name: Aur | install packages
+    become: true
+    become_user: "{{ aur_user }}"
+    kewlfft.aur.aur:
+      use: yay
+      state: present
+      name:
+      # - aur/dmenu2
+      # - aur/docker-credential-pass-bin
+      - aur/etcher-bin
+      - aur/flux-bin
+      - aur/google-chrome
+      - aur/google-cloud-sdk
+      - aur/go-task-bin
+      # - aur/i3blocks-contrib
+      - aur/kind-bin
+      - aur/lens-bin
+      - aur/mqtt-explorer-appimage
+      # - aur/nerd-fonts-inconsolata
+      # - aur/nerd-fonts-inconsolata-go
+      - aur/nodejs-markdownlint-cli
+      - aur/nvm
+      # - aur/otf-inconsolata-dz-powerline
+      - aur/postman-bin
+      - aur/pyenv-virtualenv
+      # - aur/spaceship-prompt
+      - aur/spotify
+      - aur/terraform-docs-bin
+      - aur/tflint-bin
+      - aur/tfsec
+      # - aur/visual-studio-code-bin
+      - aur/yay
 
   # - name: Config | create symlink go-task -> task
   #   become: true
