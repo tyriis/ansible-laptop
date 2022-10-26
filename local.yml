@@ -199,7 +199,7 @@
       - aur/tflint-bin
       - aur/tfsec
       # - aur/visual-studio-code-bin
-      - aur/yay
+      - aur/yay-bin
 
   # - name: Config | create symlink go-task -> task
   #   become: true
